@@ -1,16 +1,6 @@
 package com.example.pc_4.funnyanecdotes11.view;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import com.example.pc_4.funnyanecdotes11.R;
-import com.example.pc_4.funnyanecdotes11.data.AnecdoteContent;
 
 /**
  * A fragment representing a single Item detail screen.
@@ -23,17 +13,17 @@ public class ItemDetailFragment extends Fragment {
      * The fragment argument representing the item ID that this fragment
      * represents.
      */
-    public static final String ARG_ITEM_ID = "item_id";
+  /*  public static final String ARG_ITEM_ID = "item_id";
 
-    /**
+    *//**
      * The dummy content this fragment is presenting.
-     */
+     *//*
     private AnecdoteContent.DummyItem mItem;
 
-    /**
+    *//**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
-     */
+     *//*
     public ItemDetailFragment() {
     }
 
@@ -66,5 +56,5 @@ public class ItemDetailFragment extends Fragment {
         }
 
         return rootView;
-    }
+    }*/
 }

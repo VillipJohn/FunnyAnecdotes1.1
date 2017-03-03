@@ -1,7 +1,5 @@
 package com.example.pc_4.funnyanecdotes11.view;
 
-import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -120,11 +118,14 @@ public class ItemListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             //holder.mItem = mValues.get(position);
-            if(mValues.get(position) == 0){
 
+            if(mValues.get(position).equals("ИЗБРАННОЕ")){
+                holder.mImgView.setImageResource(R.drawable.star);
+            } else {
+                holder.mImgView.setImageResource(R.drawable.smile);
             }
-            holder.mImgView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+
+            holder.mContentView.setText(mValues.get(position));
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
