@@ -3,25 +3,21 @@ package com.example.pc_4.funnyanecdotes11.view;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pc_4.funnyanecdotes11.R;
-import com.example.pc_4.funnyanecdotes11.data.DataBaseHelper;
-import com.example.pc_4.funnyanecdotes11.data.AnecdoteContent;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -98,15 +94,19 @@ public class ItemListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(AnecdoteContent.ITEMS));
+        String[] categoryList = getResources().getStringArray(R.array.category_list);
+        List<String> list = Arrays.asList(categoryList);
+        ArrayList<String> listOfCategory = new ArrayList<>(list);
+
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(listOfCategory));
     }
 
     public class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<AnecdoteContent.DummyItem> mValues;
+        private final List<String> mValues;
 
-        public SimpleItemRecyclerViewAdapter(List<AnecdoteContent.DummyItem> items) {
+        public SimpleItemRecyclerViewAdapter(List<String> items) {
             mValues = items;
         }
 
@@ -119,14 +119,19 @@ public class ItemListActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
-            holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
+            //holder.mItem = mValues.get(position);
+            if(mValues.get(position) == 0){
+
+            }
+            holder.mImgView.setText(mValues.get(position).id);
             holder.mContentView.setText(mValues.get(position).content);
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mTwoPane) {
+
+                    Toast.makeText(ItemListActivity.this, holder.mContentView.toString() ,Toast.LENGTH_LONG).show();
+                    /*if (mTwoPane) {
                         Bundle arguments = new Bundle();
                         arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
                         ItemDetailFragment fragment = new ItemDetailFragment();
@@ -140,7 +145,7 @@ public class ItemListActivity extends AppCompatActivity {
                         intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
 
                         context.startActivity(intent);
-                    }
+                    }*/
                 }
             });
         }
@@ -152,16 +157,18 @@ public class ItemListActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
-            public final TextView mIdView;
+            public final ImageView mImgView;
             public final TextView mContentView;
-            public AnecdoteContent.DummyItem mItem;
+            //public AnecdoteContent.DummyItem mItem;
 
-            public ViewHolder(View view) {
+            public ViewHolder (View view){
                 super(view);
+
                 mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
+                mImgView = (ImageView) view.findViewById(R.id.imageLabel);
                 mContentView = (TextView) view.findViewById(R.id.content);
             }
+
 
             @Override
             public String toString() {

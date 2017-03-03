@@ -2,4 +2,19 @@
     <string name="app_name">FunnyAnecdotes1.1</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="advertising">Реклама</string>
+
+    <string-array name="category_list">
+        <item>ИЗБРАННОЕ</item>
+        <item>ПРО АЙТИШНИКОВ</item>
+        <item>ПРО БЛОНДИНОК</item>
+        <item>ПРО ВРАЧЕЙ</item>
+        <item>ПРО СТУДЕНТОВ</item>
+        <item>ПРО ЕВРЕЕВ</item>
+        <item>ПРО АРМИЮ</item>
+        <item>ПРО СПОРТ</item>
+        <item>ПРО ГЕРОЕВ</item>
+        <item>ПРО НАРКОМАНОВ</item>
+        <item>ПРО ВОВОЧКУ</item>
+        <item>ПРО НОВЫХ РУССКИХ</item>
+    </string-array>
 </resources>
