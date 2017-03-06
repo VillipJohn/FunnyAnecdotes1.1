@@ -1,6 +1,7 @@
 package com.example.pc_4.funnyanecdotes11.view;
 
-import android.database.Cursor;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.pc_4.funnyanecdotes11.R;
 
@@ -33,8 +33,6 @@ public class ItemListActivity extends AppCompatActivity {
      * device.
      */
     private boolean mTwoPane;
-
-    Cursor c = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,10 +129,10 @@ public class ItemListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Toast.makeText(ItemListActivity.this, holder.mContentView.toString() ,Toast.LENGTH_LONG).show();
-                    /*if (mTwoPane) {
+                    //Toast.makeText(ItemListActivity.this, holder.mContentView.toString() ,Toast.LENGTH_LONG).show();
+                    if (mTwoPane) {
                         Bundle arguments = new Bundle();
-                        arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                        //arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
                         ItemDetailFragment fragment = new ItemDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
@@ -143,10 +141,10 @@ public class ItemListActivity extends AppCompatActivity {
                     } else {
                         Context context = v.getContext();
                         Intent intent = new Intent(context, ItemDetailActivity.class);
-                        intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
+                        intent.putExtra(ItemDetailFragment.CATEGORY, holder.mContentView.getText());
 
                         context.startActivity(intent);
-                    }*/
+                    }
                 }
             });
         }

@@ -16,30 +16,50 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:background="?android:attr/colorMultiSelectHighlight"
+            android:background="#f37e10"
             android:layout_weight="1"
             android:layout_height="0dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/home"
-                android:id="@+id/imageView2"
-                android:padding="10dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/share"
-                android:id="@+id/imageView3"
-                android:padding="10dp" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/home"
+                    android:id="@+id/imageView2"
+                    android:minHeight="30dp"
+                    android:minWidth="30dp"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/star"
-                android:id="@+id/imageView4"
-                android:padding="10dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/share"
+                    android:id="@+id/imageView3"
+                    android:layout_gravity="center"
+                    android:layout_width="40dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/star"
+                    android:id="@+id/imageView4"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
         </LinearLayout>
 
@@ -57,7 +77,16 @@
                 android:background="@android:color/holo_orange_light"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp" >
+
+                <TextView
+                    android:text="— Алло! Техотдел?! Я пароль набираю — а меня не пускают! — Значит, правильно набирать надо. — Я правильно набираю! Пять звездочек!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    android:textColor="#430d0d"
+                    android:textSize="24sp" />
+            </android.support.v4.widget.NestedScrollView>
 
         </FrameLayout>
 
@@ -68,12 +97,19 @@
             android:background="@android:color/holo_orange_light"
             android:layout_height="0dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/arrow_left"
-                android:id="@+id/imageView5"
-                android:layout_weight="1" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/arrow_left"
+                    android:id="@+id/imageView5"
+                    android:layout_weight="1"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -86,19 +122,26 @@
                 android:text="45/156"
                 android:textSize="30sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/arrow_right"
-                android:id="@+id/imageView6"
-                android:layout_weight="1" />
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/arrow_right"
+                    android:id="@+id/imageView6"
+                    android:layout_weight="1"
+                    android:layout_gravity="center" />
+            </FrameLayout>
 
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5">
+            android:layout_weight="1">
 
             <TextView
                 android:text="@string/advertising"
