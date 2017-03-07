@@ -1,10 +1,7 @@
 package com.example.pc_4.funnyanecdotes11.view;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 
 import com.example.pc_4.funnyanecdotes11.R;
 
@@ -29,8 +26,9 @@ public class ItemDetailActivity extends AppCompatActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(ItemDetailFragment.CATEGORY,
-                    getIntent().getStringExtra(ItemDetailFragment.CATEGORY));
+
+            arguments.putInt(ItemDetailFragment.CATEGORY,
+                    getIntent().getIntExtra(ItemDetailFragment.CATEGORY, 0));
             ItemDetailFragment fragment = new ItemDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
@@ -39,7 +37,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         }
     }
 
-    @Override
+   /* @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
@@ -54,5 +52,5 @@ public class ItemDetailActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

@@ -31,10 +31,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * @param context
      */
     public DataBaseHelper(Context context) {
-        super(context, DB_NAME, null, 12);
+        super(context, DB_NAME, null, 1);
         this.mContext = context;
         DB_PATH = "/data/data/" + context.getPackageName() + "/databases/" + DB_NAME;
+
         Log.v("LogDataBaseHelper", DB_PATH);
+
+        try {
+            createDataBase();
+        } catch (IOException ioe) {
+            throw new Error("Unable to create database");
+        }
     }
 
     /**
@@ -42,8 +49,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * */
     public void createDataBase() throws IOException {
         boolean dbExist = checkDataBase();
-
-
 
         if(dbExist){
             Log.v("myLogDBH", "база существует");
@@ -140,6 +145,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // в создании адаптеров для ваших view
 
     public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
-        return myDataBase.query("maintable", null, null, null, null, null, null);
+        return myDataBase.query("maintable", columns, selection, null, null, null, null);
     }
 }

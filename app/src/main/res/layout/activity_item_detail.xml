@@ -67,17 +67,10 @@
             android:layout_width="match_parent"
             android:layout_weight="5"
             android:layout_height="0dp"
-            android:background="@android:color/holo_orange_light">
+            android:id="@+id/item_detail_container"
+            android:background="@android:color/holo_orange_light"
+           >
 
-            <android.support.v4.widget.NestedScrollView
-                android:id="@+id/item_detail_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:background="@android:color/holo_orange_light"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp" >
 
                 <TextView
                     android:text="— Алло! Техотдел?! Я пароль набираю — а меня не пускают! — Значит, правильно набирать надо. — Я правильно набираю! Пять звездочек!"
@@ -85,8 +78,10 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3"
                     android:textColor="#430d0d"
-                    android:textSize="24sp" />
-            </android.support.v4.widget.NestedScrollView>
+                    android:textSize="24sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp" />
 
         </FrameLayout>
 
