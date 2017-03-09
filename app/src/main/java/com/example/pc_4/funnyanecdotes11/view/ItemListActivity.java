@@ -34,8 +34,6 @@ public class ItemListActivity extends AppCompatActivity {
      */
     private boolean mTwoPane;
 
-    private int chosenCategory;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,7 +125,7 @@ public class ItemListActivity extends AppCompatActivity {
 
             holder.mContentView.setText(mValues.get(position));
 
-            chosenCategory = position;
+            holder.chosenCategory = position;
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -145,7 +143,7 @@ public class ItemListActivity extends AppCompatActivity {
                     } else {
                         Context context = v.getContext();
                         Intent intent = new Intent(context, ItemDetailActivity.class);
-                        intent.putExtra(ItemDetailFragment.CATEGORY, 1);
+                        intent.putExtra(ItemDetailFragment.CATEGORY, holder.chosenCategory);
 
                         context.startActivity(intent);
                     }
@@ -162,6 +160,7 @@ public class ItemListActivity extends AppCompatActivity {
             public final View mView;
             public final ImageView mImgView;
             public final TextView mContentView;
+            public int chosenCategory;
             //public AnecdoteContent.DummyItem mItem;
 
             public ViewHolder (View view){

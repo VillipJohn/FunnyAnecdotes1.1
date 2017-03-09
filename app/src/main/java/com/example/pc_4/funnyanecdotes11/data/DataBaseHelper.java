@@ -1,5 +1,6 @@
 package com.example.pc_4.funnyanecdotes11.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -145,6 +146,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // в создании адаптеров для ваших view
 
     public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
-        return myDataBase.query("maintable", columns, selection, null, null, null, null);
+        return myDataBase.query("maintable", columns, selection, selectionArgs, null, null, null);
     }
+
+    public int update (String table, ContentValues values, String whereClause, String[] whereArgs){
+
+    }
+
+
 }
