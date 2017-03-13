@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.pc_4.funnyanecdotes11.view.ItemListActivity">
+    tools:context="com.example.pc_4.funnyanecdotes11.view.AnecdoteListActivity">
 
     <LinearLayout
         android:orientation="vertical"

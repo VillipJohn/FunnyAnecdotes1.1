@@ -9,5 +9,5 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.example.pc_4.funnyanecdotes11.view.ItemListActivity"
+    tools:context="com.example.pc_4.funnyanecdotes11.view.AnecdoteListActivity"
     tools:listitem="@layout/item_list_content" />

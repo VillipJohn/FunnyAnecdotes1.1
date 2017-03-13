@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:id="@+id/item_detail_container"
     android:fitsSystemWindows="true"
-    tools:context="com.example.pc_4.funnyanecdotes11.view.ItemDetailActivity"
+    tools:context="com.example.pc_4.funnyanecdotes11.view.AnecdoteDetailActivity"
     tools:ignore="MergeRootFrame" />
 
 

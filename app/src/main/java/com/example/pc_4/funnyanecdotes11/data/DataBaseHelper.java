@@ -23,8 +23,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // путь к базе данных вашего приложения
     private static String DB_PATH;
     private static String DB_NAME = "anecdotesdb";
+    public static final String TABLE_NAME = "maintable";
+    public static final String KEY_ID = "_id";
+    public static final String CATEGORY = "CATEGORY";
+    public static final String KEY_FAVORITE = "FAVORITE";
+    public static final String KEY_TEXT = "TEXT";
+    public static final String KEY_VIEWED = "VIEWED";
     private SQLiteDatabase myDataBase;
     private final Context mContext;
+
 
     /**
      * Конструктор
@@ -32,7 +39,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * @param context
      */
     public DataBaseHelper(Context context) {
-        super(context, DB_NAME, null, 1);
+        super(context, DB_NAME, null, 2);
         this.mContext = context;
         DB_PATH = "/data/data/" + context.getPackageName() + "/databases/" + DB_NAME;
 
@@ -116,7 +123,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void openDataBase() throws SQLException {
         //открываем БД
         String myPath = DB_PATH;
-        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+        myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS | SQLiteDatabase.OPEN_READWRITE);
     }
 
     @Override
@@ -146,12 +153,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // в создании адаптеров для ваших view
 
     public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {
-        return myDataBase.query("maintable", columns, selection, selectionArgs, null, null, null);
+        return myDataBase.query(table, columns, selection, selectionArgs, null, null, null);
     }
 
-    public int update (String table, ContentValues values, String whereClause, String[] whereArgs){
-
+    public void updateViewed (String table, ContentValues values, String whereClause, String[] whereArgs){
+        myDataBase.update(table, values, whereClause, whereArgs);
     }
 
+    public void addFavorite(String table, ContentValues values) {
+        myDataBase.insert (table, null, values);
+    }
 
 }

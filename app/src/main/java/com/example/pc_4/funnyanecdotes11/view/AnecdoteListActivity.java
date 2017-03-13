@@ -22,11 +22,11 @@ import java.util.List;
  * An activity representing a list of Items. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link ItemDetailActivity} representing
+ * lead to a {@link AnecdoteDetailActivity} representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-public class ItemListActivity extends AppCompatActivity {
+public class AnecdoteListActivity extends AppCompatActivity {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -38,43 +38,6 @@ public class ItemListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
-
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                *//*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*//*
-
-                    DataBaseHelper myDbHelper = new DataBaseHelper(ItemListActivity.this);
-                    try {
-                        myDbHelper.createDataBase();
-                    } catch (IOException ioe) {
-                        throw new Error("Unable to create database");
-                    }
-                    try {
-                        myDbHelper.openDataBase();
-                    } catch (SQLException sqle) {
-                        throw sqle;
-                    }
-                    Toast.makeText(ItemListActivity.this, "Successfully Imported", Toast.LENGTH_SHORT).show();
-
-                    Log.v("myLog", "Successgully Imported");
-
-                    c = myDbHelper.query("maintable", null, null, null, null, null, null);
-                    if (c.moveToFirst()) {
-                        do {
-                            Toast.makeText(ItemListActivity.this,
-                                    "_id: " + c.getString(0) + "\n" +
-                                            "CATEGORY: " + c.getString(1) + "\n" +
-                                            "ID CATEGORY: " + c.getString(2) + "\n" +
-                                            "FAVORITE:  " + c.getString(3) + "\n" +
-                                            "TEXT:  " + c.getString(4),
-                                    Toast.LENGTH_LONG).show();
-                        } while (c.moveToNext());
-                    }
-            }
-        });*/
 
         View recyclerView = findViewById(R.id.item_list);
         assert recyclerView != null;
@@ -131,19 +94,20 @@ public class ItemListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    //Toast.makeText(ItemListActivity.this, holder.mContentView.toString() ,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(AnecdoteListActivity.this, holder.mContentView.toString() ,Toast.LENGTH_LONG).show();
                     if (mTwoPane) {
                         Bundle arguments = new Bundle();
-                        //arguments.putString(ItemDetailFragment.ARG_ITEM_ID, holder.mItem.id);
-                        ItemDetailFragment fragment = new ItemDetailFragment();
+                        //arguments.putString(AnecdoteDetailCategoryFragment.ARG_ITEM_ID, holder.mItem.id);
+                        AnecdoteDetailCategoryFragment fragment = new AnecdoteDetailCategoryFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.item_detail_container, fragment)
                                 .commit();
                     } else {
                         Context context = v.getContext();
-                        Intent intent = new Intent(context, ItemDetailActivity.class);
-                        intent.putExtra(ItemDetailFragment.CATEGORY, holder.chosenCategory);
+                        Intent intent = new Intent(context, AnecdoteDetailActivity.class);
+
+                        intent.putExtra(AnecdoteDetailCategoryFragment.CATEGORY, holder.chosenCategory);
 
                         context.startActivity(intent);
                     }

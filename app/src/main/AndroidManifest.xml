@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.ItemListActivity"
+            android:name=".view.AnecdoteListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,13 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ItemDetailActivity"
+            android:name=".view.AnecdoteDetailActivity"
             android:label="@string/title_item_detail"
-            android:parentActivityName=".view.ItemListActivity"
+            android:parentActivityName=".view.AnecdoteListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.pc_4.funnyanecdotes11.view.ItemListActivity" />
+                android:value="com.example.pc_4.funnyanecdotes11.view.AnecdoteListActivity" />
         </activity>
     </application>
 
