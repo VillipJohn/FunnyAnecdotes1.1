@@ -47,16 +47,16 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
 
         myDbHelper = new DataBaseHelper(getContext());
 
-        if (getArguments().containsKey(CATEGORY)) {
+      /*  if (getArguments().containsKey(CATEGORY)) {
              setAnecdote();
-               /* Toast.makeText(getContext(),
+               *//* Toast.makeText(getContext(),
                         "numberInCategory:  " + Integer.toString(numberInCategory) + "\n" +
                                 "countAnecrotesInCategory:  " + Integer.toString(countAnecrotesInCategory) + "\n" +
                                 "favoriteOrNot:  " + Integer.toString(favoriteOrNot) + "\n" +
                                 "TEXT:  " + textAnecdote,
                         Toast.LENGTH_LONG).show();
-*/
-        }
+*//*
+        }*/
     }
 
     private void setAnecdote() {
@@ -107,15 +107,17 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
             right = (ImageView) rootView.findViewById(R.id.imgBtnRight);
             home = (ImageView) rootView.findViewById(R.id.imgBtnHome);
             favorite = (ImageView) rootView.findViewById(R.id.imgBtnFavorite);
+
+            left.setOnClickListener(this);
+            right.setOnClickListener(this);
+            home.setOnClickListener(this);
+            favorite.setOnClickListener(this);
+
+            contentAnecdote = (ScrollView) rootView.findViewById(R.id.scrollContentAnecdote);
+            contentAnecdote.setOnTouchListener(this);
+
         }
 
-        left.setOnClickListener(this);
-        right.setOnClickListener(this);
-        home.setOnClickListener(this);
-        favorite.setOnClickListener(this);
-
-        contentAnecdote = (ScrollView) rootView.findViewById(R.id.scrollContentAnecdote);
-        contentAnecdote.setOnTouchListener(this);
 
         return rootView;
     }
@@ -250,7 +252,7 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
         super.onPause();
         // Закрываем подключение и курсор
         myDbHelper.close();
-        cursor.close();
+        //cursor.close();
     }
 }
 

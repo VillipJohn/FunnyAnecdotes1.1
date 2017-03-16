@@ -5,17 +5,46 @@
 
     <string-array name="category_list">
         <item>ИЗБРАННОЕ</item>
-        <item>ПРО АЙТИШНИКОВ</item>
+        <item>ПРО АЛКОГОЛИКОВ</item>
+        <item>ПРО ЖИВОТНЫХ</item>
         <item>ПРО БЛОНДИНОК</item>
+        <item>ПРО КРИМИНАЛ</item>
         <item>ПРО ВРАЧЕЙ</item>
-        <item>ПРО СТУДЕНТОВ</item>
-        <item>ПРО ЕВРЕЕВ</item>
-        <item>ПРО АРМИЮ</item>
-        <item>ПРО СПОРТ</item>
         <item>ПРО ГЕРОЕВ</item>
+        <item>ПРО АЙТИШНИКОВ</item>
+        <item>ПРО ЕВРЕЕВ</item>
         <item>ПРО НАРКОМАНОВ</item>
+        <item>ПРО ОТПУСК</item>
+        <item>ПРО ЭТО</item>
+        <item>ПРО СПОРТ</item>
+        <item>ПРО СТУДЕНТОВ</item>
+        <item>ПРО ТЁЩУ</item>
         <item>ПРО ВОВОЧКУ</item>
+        <item>ПРО АРМИЮ</item>
+        <item>ПРО ШТИРЛИЦА</item>
+        <item>ПРО ЧУКЧУ</item>
+        <item>ПРО ДРУЗЕЙ</item>
+        <item>ПРО АСТРОНОМИЮ</item>
+        <item>ПРО СТАХАНОВА</item>
+        <item>ПРО ДИНОЗАВРОВ</item>
+        <item>ПРО ПРЕДПРИНИМАТЕЛЕЙ</item>
+        <item>ПРО ЧЕЛЯБИНСК</item>
+        <item>ПРО ПРЕЗИДЕНТОВ</item>
         <item>ПРО НОВЫХ РУССКИХ</item>
+        <item>ПРО ВКОНТАКТЕ</item>
+        <item>ПРО ЕДУ</item>
+        <item>ПРО НОВЫЙ ГОД</item>
+        <item>ПРО ПОПУГАЯ</item>
+        <item>ПРО МОЛОДОЖЕНОВ</item>
+        <item>ПРО ИНТЕРНЕТ</item>
+        <item>ПРО ТВИТТЕР</item>
+        <item>ПРО МОРЯКОВ</item>
+        <item>ПРО ЛЁТЧИКОВ</item>
+        <item>ПРО ЧАПАЕВА И ПЕТЬКУ</item>
+        <item>ПРО ТАНЦЫ</item>
+        <item>ПРО СУМАСШЕДШИХ</item>
+        <item>ПРО ГЕНУ И ЧЕБУРАШКУ</item>
+        <item>БЕЗ РУБРИКИ</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
