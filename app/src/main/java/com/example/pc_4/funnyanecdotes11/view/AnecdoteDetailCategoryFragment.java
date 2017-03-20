@@ -29,7 +29,7 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
     private int numberInCategory;
     private int favoriteOrNot;
     private String textAnecdote;
-    public ImageView left, right, home, favorite;
+    public ImageView left, right, home, favorite, share;
     public TextView textViewAnecdote;
     public TextView textViewCount;
     public ScrollView contentAnecdote;
@@ -118,6 +118,9 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
 
         }
 
+        share = (ImageView) rootView.findViewById(R.id.imgBtnShare);
+        share.setOnClickListener(this);
+
 
         return rootView;
     }
@@ -140,6 +143,15 @@ public class AnecdoteDetailCategoryFragment extends Fragment implements View.OnT
             case R.id.imgBtnHome:
                 Intent intent = new Intent(getContext(), AnecdoteListActivity.class);
                 getActivity().startActivity(intent);
+                break;
+            case R.id.imgBtnShare:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,"text for share");
+                sendIntent.setType("text/plain");
+                Intent.createChooser(sendIntent,"Share via");
+                startActivity(sendIntent);
+
                 break;
             // Функция
             case R.id.imgBtnFavorite:

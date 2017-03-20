@@ -53,11 +53,12 @@ tools:ignore="MergeRootFrame">
             android:layout_weight="1">
 
             <ImageView
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:srcCompat="@drawable/share"
-                android:id="@+id/imageView3"
+                android:id="@+id/imgBtnShare"
                 android:layout_gravity="center"
-                android:layout_width="40dp" />
+                 />
         </FrameLayout>
 
         <FrameLayout

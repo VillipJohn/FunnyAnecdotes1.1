@@ -45,7 +45,6 @@ public class AnecdoteListActivity extends AppCompatActivity {
 
     int page = 1;
     //String url = "http://www.anekdotabc.com.ua/wp-json/wp/v2/posts?per_page=100&page="+page+"&fields=id,content,categories";
-    List<Object> list;
     Gson gson;
     //ProgressDialog progressDialog;
     //ListView postList;
@@ -174,6 +173,13 @@ public class AnecdoteListActivity extends AppCompatActivity {
     }
 
     private void onRequest(){
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         onRequestLoop();
     }
 
@@ -184,6 +190,7 @@ public class AnecdoteListActivity extends AppCompatActivity {
             public void onResponse(String s) {
                 //if(s.equals("[]")) return null;
                 gson = new Gson();
+                List<Object> list;
                 list = (List) gson.fromJson(s, List.class);
                 //postTitle = new String[list.size()];
 
@@ -206,8 +213,8 @@ public class AnecdoteListActivity extends AppCompatActivity {
 
                 Log.v("TAG_MainActivity", "page= " + page);
 
-               /* page++;
-                onRequest();*/
+                page++;
+                onRequest();
 
 
             }
@@ -215,12 +222,17 @@ public class AnecdoteListActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 Log.v("TAG_MainActivity", "Сработал блок ошибки");
+                onRequest();
             }
         });
 
         RequestQueue rQueue = Volley.newRequestQueue(getApplicationContext());
         rQueue.add(request);
 
+    }
+
+    public interface VolleyCallback {
+        void onSuccessResponse(String result);
     }
 
    /* private class downloadAsyncTask extends AsyncTask<Void, Void, Void> {

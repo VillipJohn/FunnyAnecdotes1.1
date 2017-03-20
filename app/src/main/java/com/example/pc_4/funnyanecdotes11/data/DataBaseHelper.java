@@ -22,13 +22,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     // путь к базе данных вашего приложения
     private static String DB_PATH;
-    private static String DB_NAME = "anecdotesdb";
+    private static String DB_NAME = "anecdotesdb2";
     public static final String TABLE_NAME = "maintable";
     public static final String KEY_ID = "_id";
     public static final String CATEGORY = "CATEGORY";
     public static final String KEY_FAVORITE = "FAVORITE";
     public static final String KEY_TEXT = "TEXT";
     public static final String KEY_VIEWED = "VIEWED";
+    public static final String KEY_ID_SITE = "ID_SITE";
     private SQLiteDatabase myDataBase;
     private final Context mContext;
 
